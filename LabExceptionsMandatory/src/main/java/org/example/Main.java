@@ -1,14 +1,16 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.IOException;
+
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         PersonsList personsLis = new PersonsList();
         Person p=personsLis.findByName("Ana Guerra");
-        //System.out.println(p.getName());
 
-        System.out.println(Person.isCorrectName("Rocio Jurado"));
+        try {
+            personsLis.writePersonToFile("myFile.txt", p);
+        } catch (Exception e){e.getMessage();}
     }
 }

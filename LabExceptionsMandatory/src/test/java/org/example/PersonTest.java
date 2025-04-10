@@ -19,7 +19,9 @@ class PersonTest {
     @Test
     @DisplayName("Check setName() throws exception")
     void testAge() {
-        assertThrows(IllegalArgumentException.class, () -> person.setAge(-1));
+        assertThrows (IllegalArgumentException.class, () -> person.setAge(-1));
+        assertDoesNotThrow(()->person.setAge(18));
+
     }
 
 }

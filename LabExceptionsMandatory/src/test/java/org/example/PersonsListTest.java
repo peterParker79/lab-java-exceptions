@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonsListTest {
 
     PersonsList personsList;
+    //Person person = new Person(1, "Pedro Sanchez", 27,
+          //  "Presidente del Gobierno");
 
 
     @BeforeEach
@@ -20,7 +22,7 @@ class PersonsListTest {
     }
 
     @Test
-    @DisplayName("to ensure that it properly finds" +
+    @DisplayName("To ensure that it properly finds" +
             " and returns the correct Person object" +
             " when given a properly formatted name")
 
@@ -34,6 +36,16 @@ class PersonsListTest {
     }
 
     @Test
+    @DisplayName ("To ensure that it creates a new Person object with the same" +
+                    " properties as the original, except with a new id")
+
     void testClone() {
+        Person person = personsList.getPersonList("Diego Suarez");
+        Person clonedPerson= personsList.clone(person);
+        assert person.equals(clonedPerson);
+
+        clonedPerson.setAge(45);
+        assert !(person.equals(clonedPerson));
+
     }
 }

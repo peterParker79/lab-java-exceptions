@@ -49,11 +49,20 @@ private HashMap <String, Person> personsList;
     }
 
 
-    public void writePersonToFile(String fileName, Person p) throws IOException {
-        FileWriter writer = new FileWriter(fileName);
-        writer.write(p.toString());
+    public void writePersonToFile (String fileName, Person p) throws IOException {
+
+       try {
+           FileWriter myWriter = new FileWriter(fileName, true);
+           myWriter.write(p.toString());
+           myWriter.close();
+
+       } catch (IOException e) {
+           throw new IOException();
+       }
+
 
     }
 
+    Person getPersonList(String name){return personsList.get(name);}
 
 }
