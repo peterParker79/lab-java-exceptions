@@ -5,5 +5,10 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
+        PersonsList personsLis = new PersonsList();
+        Person p=personsLis.findByName("Ana Guerra");
+        //System.out.println(p.getName());
+
+        System.out.println(Person.isCorrectName("Rocio Jurado"));
     }
 }

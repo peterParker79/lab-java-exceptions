@@ -62,10 +62,10 @@ public class Person {
     }
 
     //check name format name  space  surname
-    public boolean checkCorrectName (String name){
-      String[] nameSurname= name.trim().split("");
-      if (nameSurname.length != 2){return false;}
-      return true;
+    public static boolean isCorrectName (String name){
+        String[] nameSurname= name.trim().split(" ");
+        if (nameSurname.length == 2){return true;}
+        return false;
     }
 
     @Override
