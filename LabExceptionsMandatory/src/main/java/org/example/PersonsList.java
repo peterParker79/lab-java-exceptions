@@ -14,12 +14,14 @@ private HashMap <String, Person> personsList;
     }
 
     public Person findByName(String name) throws IllegalArgumentException{
-    if(!(checkCorrectName(name)){
+    if(!(checkCorrectName(name))){
         throw new IllegalArgumentException();
         }
     // return person if exists.
     if (personsList.containsKey(name)){return personsList.get(name);}
+        return null; //If person do not exists
     }
+
 
 
     public Person clone(Person p){
